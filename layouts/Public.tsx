@@ -44,7 +44,7 @@ const Burger = styled(Burg)`
     
 `
 
-const MNav: ({className}: {className?: string}) => JSX.Element = ({className}) => <div className={className}>
+const MNav: ({className, open}: {className?: string, open?: boolean}) => JSX.Element = ({className}) => <div className={className}>
     <ul>{
         links.map(({label, href}) => <li key={label}>
             <Link href={href}>{label}</Link>
