@@ -103,7 +103,7 @@ const Heading: ({isMobile, className}: { isMobile: boolean, className?: string }
                 }</ul>
                 <Link href={'/checkout'}><div className={'cartContainer'}><CartIcon/></div></Link>
             </header>}
-            {isMobile && <MobileNav open={burgerOpen} />} />}
+            {isMobile && <MobileNav open={burgerOpen} />}
         </div>
     )
 }
