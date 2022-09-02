@@ -1,4 +1,4 @@
-import { IconSvg,  } from "./IconSvg";
+import { IconSvg } from "./IconSvg";
 
 export const CartIcon: ({iconHeight, iconWidth}: {iconHeight?: string, iconWidth?: string}) => JSX.Element = ({ iconHeight, iconWidth }) => (
     <IconSvg
