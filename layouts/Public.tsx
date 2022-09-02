@@ -77,7 +77,7 @@ const MobileNav = styled(MNav)`
     }
 `
 
-const BurgerContainer = styled.div`
+const BurgerContainer = styled.div<{open?: boolean}>`
     z-index: 500;
     margin-top: ${({open}) => open ? '6rem' : 0};
     margin-bottom: ${({open}) => open ? '-6rem' : 0}
