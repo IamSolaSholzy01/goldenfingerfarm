@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import {NextComponentType} from "next";
 import styled from "styled-components";
 import {primaryColors} from "../theme/colors";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logoPic from "../public/images/logo.png"
 import {CartIcon} from "../components/icons/CartIcon";
-import React from "react";
+import React, {ReactNode} from "react";
 
 const links = [
     {label: "Home", href: "/"},
@@ -180,7 +179,7 @@ const Public: ({
                    title,
                    children,
                    className
-               }: { title: string, children: NextComponentType, className?: string }) => JSX.Element = ({
+               }: { title: string, children: ReactNode, className?: string }) => JSX.Element = ({
                                                                                                             title,
                                                                                                             children,
                                                                                                             className
