@@ -34,9 +34,47 @@ export const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     scroll-behavior: smooth;
     color: #333;
   }
+  
+  @media screen and (max-width: 1040px) {
+    html, body {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    html, body {
+      font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    html, body {
+      font-size: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 325px) {
+    html, body {
+      font-size: 8px;
+    }
+  }
 
   *, *:before, *:after {
     box-sizing: inherit;
+  }
+  
+  ul, li {
+    list-style: none;
+  }
+  
+  li:has(a) {
+    cursor: pointer;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   ${(props: { hasNoFocus: any; }) => props.hasNoFocus && ":focus { outline: none; }"}

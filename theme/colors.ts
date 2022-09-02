@@ -1,7 +1,7 @@
 /**
  * Colors here are taken directly from Figma
  *
- * https://www.figma.com/file/SfCM8AjNl9vmEOklL7pBVP/BOLT%2FCEG?node-id=0%3A730
+ * https://www.figma.com/file/8VJ3IWbn0xH7YAU9ztQr78/Golden-finger?node-id=0%3A1
  */
 
 export enum primaryColors {
