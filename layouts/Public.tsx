@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {primaryColors} from "../theme/colors";
 import useMediaQuery from "../hooks/useMediaQuery";
 import logoPic from "../public/images/logo.png"
-import {CartIcon} from "../components/icons/CartIcon";
+// import {CartIcon} from "../components/icons/CartIcon";
 import React, {ReactNode} from "react";
 
 const links = [
@@ -15,6 +15,20 @@ const links = [
     {label: "Academy", href: "/academy"},
     {label: "Contact us", href: "/contact"},
 ]
+
+const footerLinks = [
+    {label: "Help and Ordering", href: "/help"},
+    {label: "Privacy Policy", href: "/privacy"},
+    {label: "Return and Cancellation", href: "/return"},
+    {label: "Delivery Schedule", href: "/schedule"},
+    {label: "Get a Call", href: "/contact"},
+    {label: "Online Enquiry", href: "/enquiry"},
+]
+
+let mobileLinks = [...links]
+mobileLinks.push({label: 'Login', href: "/login"})
+mobileLinks.push({label: 'Sign up', href: "/signup"})
+
 const Burg: ({open, className}: { open: boolean, className?: string }) => JSX.Element = ({className}) => <div
     className={className}>
     <div></div>
@@ -28,7 +42,7 @@ const Burger = styled(Burg)`
       position: absolute;
       height: 2px;
       width: ${({open}) => open ? 0 : '35px'};
-      background-color: black;
+      background-color: ${({open, theme}) => !open ?  theme.colors.grayScale.darkGrey : theme.colors.grayScale.white};;
       transition: transform 0.5s ease;
       
       &:first-of-type {
@@ -45,7 +59,7 @@ const Burger = styled(Burg)`
 
 const MNav: ({className, open}: {className?: string, open?: boolean}) => JSX.Element = ({className}) => <div className={className}>
     <ul>{
-        links.map(({label, href}) => <li key={label}>
+        mobileLinks.map(({label, href}) => <li key={label}>
             <Link href={href}>{label}</Link>
         </li>)
     }</ul>
@@ -64,7 +78,7 @@ const MobileNav = styled(MNav)`
     transition: width 2s ease;
   
     ul {
-      margin-top: calc(12rem + 35px);
+      margin-top: calc(8rem + 35px);
       padding: 0 25px;
       li {
         font-size: 2.5rem;
@@ -78,8 +92,8 @@ const MobileNav = styled(MNav)`
 
 const BurgerContainer = styled.div<{open?: boolean}>`
     z-index: 500;
-    margin-top: ${({open}) => open ? '6rem' : 0};
-    margin-bottom: ${({open}) => open ? '-6rem' : 0}
+    margin-top: ${({open}) => open ? '4rem' : 0};
+    margin-bottom: ${({open}) => open ? '-4rem' : 0}; 
 
 `
 
@@ -100,7 +114,11 @@ const Heading: ({isMobile, className}: { isMobile: boolean, className?: string }
                         <Link href={href}>{label}</Link>
                     </li>)
                 }</ul>
-                <Link href={'/checkout'}><div className={'cartContainer'}><CartIcon/></div></Link>
+                {/*<Link href={'/checkout'}><div className={'cartContainer'}><CartIcon/></div></Link>*/}
+                <div className={'auth'}>
+                    <div><Link href={'/login'}>Login</Link></div>
+                    <div><Link href={'/signup'}>Sign up</Link></div>
+                </div>
             </header>}
             {isMobile && <MobileNav open={burgerOpen} />}
         </div>
@@ -117,7 +135,7 @@ const Header = styled(Heading)`
   }
 
   header.desktopHeader {
-    padding: 1.5625rem 6.875rem;
+    padding: 1.5625rem 1.875rem;
 
     ul {
       display: flex;
@@ -173,8 +191,129 @@ const Header = styled(Heading)`
       max-height: 5rem;
     }
   }
+  
+  .auth {
+    display: flex;
+    
+    div {
+      padding: 10px 40px;
+      border-radius: 7.5px;
+      margin: 0 7px;
+    }
+    div:first-of-type {
+      border: 1px solid ${({theme}) => theme.colors.primary.green};
+    }
+    div:last-of-type {
+      background-color: ${({theme}) => theme.colors.primary.green};
+      color: ${({theme}) => theme.colors.grayScale.white}
+    }
+  }
 `
 
+const Footing: ({isMobile, className}: { isMobile: boolean, className?: string }) => JSX.Element = ({
+                                                                                                        className
+                                                                                                    }) => <div  className={className}>
+    <div>
+        <div className={"socialSection"}>
+            <div className="logoWrapper"><Image src={logoPic} alt={'logo'}/></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum </p>
+        </div>
+        <div className={'supportSection'}>
+            <h3>Customer Support</h3>
+            <ul>
+                {footerLinks.map(({label, href}, index) => <li key={index}><Link href={href}>{label}</Link></li>)}
+            </ul>
+        </div>
+        <div className={'newsletterSection'}>
+            <h3>NewsLetter</h3>
+            <form>
+                <div>
+                    <label>Enter your email and we'll send you the latest plans</label>
+                    <input type={'text'} placeholder={'Enter your email'} required />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <span>Copyright &copy; 2022. <em>Goldenfinger Farm and Ranches Ltd.</em> All Right Reserved.</span>
+</div>
+
+const Footer = styled(Footing)`
+  & > div {
+    display: flex;
+    flex-direction: ${({isMobile}) => isMobile ? 'column' : 'row'};
+    align-items: ${({isMobile}) => isMobile ? 'center' : 'flex-start'};;
+    padding: ${({isMobile}) => isMobile ? '20px' : '90px'};
+    text-align: ${({isMobile}) => isMobile ? 'center' : 'left'};
+
+  & > div {
+      padding: 20px 10px;
+      width: ${({isMobile}) => isMobile ? '100%' : 'calc(100%/3)'};
+    }  
+    .socialSection {
+      padding: 0 10px;
+      text-align: ${({isMobile}) => isMobile ? 'center' : 'left'};
+      p {
+        margin: 0 auto;
+        max-width: 500px;
+      }
+      .logoWrapper {
+        margin: 0 auto;
+        max-width: 500px;
+      }
+    }
+  .supportSection, .newsletterSection {
+    h3 {
+      margin-bottom: 35px;
+      font-size: 2rem;
+    }
+    li, label {
+      font-size: 1.5rem;
+      margin-bottom: 1.375rem;
+    }
+  }
+  .newsletterSection {
+    label {
+      display: block;
+      padding: ${({isMobile}) => isMobile ? '0 40px' : '0'};
+      margin: 0 auto;
+      max-width: 500px;
+    }
+    input {
+      margin: 20px 0;
+      padding: 20px 0;
+      font-size: 1.25rem;
+      width: 100%;
+      text-align: center;
+      border: 1.5px solid #898686;
+      outline: none;
+    }
+    button {
+      font-family: Space, sans-serif;
+      padding: 20px 70px;
+      display: block;
+      margin: auto;
+      font-size: 2rem;
+      background-color: ${({theme}) => theme.colors.primary.yellow};
+      color: ${({theme}) => theme.colors.grayScale.white};
+      border: 0;
+      border-radius: 10px;
+      outline: none;
+    }
+  }
+  }
+  & > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 1.25rem;
+    
+    em {
+      color: ${({theme}) => theme.colors.primary.yellow}
+    }
+  }
+`
 const Public: ({
                    title,
                    children,
@@ -184,7 +323,7 @@ const Public: ({
                                                                                                             children,
                                                                                                             className
                                                                                                         }) => {
-    const isMobile = useMediaQuery('(max-width: 820px)')
+    const isMobile = useMediaQuery('(max-width: 895px)')
     return <div className={className}>
         <Head>
             <title>{title + ' - GoldenFingerFarm'}</title>
@@ -198,7 +337,7 @@ const Public: ({
             {children}
         </main>
         <footer>
-            My Footer
+            <Footer isMobile={isMobile}/>
         </footer>
     </div>
 }
