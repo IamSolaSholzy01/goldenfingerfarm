@@ -116,8 +116,8 @@ const Heading: ({isMobile, className}: { isMobile: boolean, className?: string }
                 }</ul>
                 {/*<Link href={'/checkout'}><div className={'cartContainer'}><CartIcon/></div></Link>*/}
                 <div className={'auth'}>
-                    <div><Link href={'/login'}>Login</Link></div>
-                    <div><Link href={'/signup'}>Sign up</Link></div>
+                    <Link href={'/login'}>Login</Link>
+                    <Link href={'/signup'}>Sign up</Link>
                 </div>
             </header>}
             {isMobile && <MobileNav open={burgerOpen} />}
@@ -195,15 +195,15 @@ const Header = styled(Heading)`
   .auth {
     display: flex;
     
-    div {
+    a {
       padding: 10px 40px;
       border-radius: 7.5px;
       margin: 0 7px;
     }
-    div:first-of-type {
+    a:first-of-type {
       border: 1px solid ${({theme}) => theme.colors.primary.green};
     }
-    div:last-of-type {
+    a:last-of-type {
       background-color: ${({theme}) => theme.colors.primary.green};
       color: ${({theme}) => theme.colors.grayScale.white}
     }
