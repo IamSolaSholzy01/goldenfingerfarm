@@ -1,66 +1,54 @@
 import styles from '../styles/Home.module.css'
+import styled from "styled-components";
+import useMediaQuery from "../hooks/useMediaQuery";
+import {PrimaryButton} from "../components/buttons";
 
-const Home: ({title}: {title: string}) => JSX.Element = () => {
-  return (
-      <>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+const Home: ({title, className}: { title: string, className: string }) => JSX.Element = ({className}) => {
+    const isMobile = useMediaQuery('(max-width: 895px)')
+    return (
+        <div className={className}>
+            <section className={styles.bgSection + ' ' + (isMobile ? styles.smBgSection : styles.lgBgSection)}>
+                <h1>Know your <span>farmer,</span></h1>
+                <h1>Know your <span>food.</span></h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Ipsum
+                </p>
+                <PrimaryButton text={'Explore Market'} />
+            </section>
         </div>
-    {/*  <footer className={styles.footer}>*/}
-    {/*    <a*/}
-    {/*      href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"*/}
-    {/*      target="_blank"*/}
-    {/*      rel="noopener noreferrer"*/}
-    {/*    >*/}
-    {/*      Powered by{' '}*/}
-    {/*      <span className={styles.logo}>*/}
-    {/*        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />*/}
-    {/*      </span>*/}
-    {/*    </a>*/}
-    {/*  </footer>*/}
-    {/*</div>*/}
-      </>
-  )
+    )
 }
+
+const HomeSection = styled(Home)`
+  section:first-of-type {
+    h1 {
+      font-weight: 600;
+      color: ${({theme}) => theme.colors.grayScale.white};
+    }
+
+    h1:first-of-type {
+      span {
+        color: ${({theme}) => theme.colors.primary.green};
+      }
+    }
+
+    h1:last-of-type {
+      span {
+        color: ${({theme}) => theme.colors.primary.yellow};
+      }
+    }
+    
+    p {
+      font-size: 1.5rem;
+      color: ${({theme}) => theme.colors.grayScale.white};
+    }
+  }
+`
 
 export async function getStaticProps() {
     const title = 'Home'
-    return { props: { title } }
+    return {props: {title}}
 }
 
-export default Home
+export default HomeSection

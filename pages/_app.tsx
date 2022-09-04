@@ -6,6 +6,7 @@ import {AppTheme} from "../theme/AppTheme";
 import Public from "../layouts/Public";
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
       <ThemeProvider theme={AppTheme}>
         <GlobalStyle hasNoFocus={true}/>
