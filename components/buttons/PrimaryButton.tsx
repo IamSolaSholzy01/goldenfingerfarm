@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Button: ({text, onClick, className}: {text: string, onClick?: any, className?: string}, ...extraProps: any[]) => JSX.Element = ({text, onClick, className, ...extraProps}) => {
-    return <button className={className} onClick={onClick} {...extraProps}>{text}</button>
+const Button: ({text, onClick, className}: {text: string, onClick?: any, className?: string}) => JSX.Element = ({text, onClick, className}) => {
+    return <button className={className} onClick={onClick}>{text}</button>
 }
 
 const PrimaryButton = styled(Button)`
