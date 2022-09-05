@@ -3,11 +3,15 @@ import styled from "styled-components";
 import useMediaQuery from "../hooks/useMediaQuery";
 import {PrimaryButton} from "../components/buttons";
 
+const classJoin = (...classes: string[]) => {
+  return classes.join(" ")
+}
+
 const Home: ({title, className}: { title: string, className: string }) => JSX.Element = ({className}) => {
     const isMobile = useMediaQuery('(max-width: 895px)')
     return (
         <div className={className}>
-            <section className={styles.bgSection + ' ' + (isMobile ? styles.smBgSection : styles.lgBgSection)}>
+            <section className={classJoin(styles.bgSection, (isMobile ? styles.smBgSection : styles.lgBgSection))}>
                 <h1>Know your <span>farmer,</span></h1>
                 <h1>Know your <span>food.</span></h1>
                 <p>

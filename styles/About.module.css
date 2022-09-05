@@ -1,0 +1,38 @@
+.bgSection {
+    background-color: #E1F8D7;
+    /* background-image: url('../public/images/aboutbg.webp'); */
+    backdrop-filter: brightness(0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+}
+
+.smBgSection {
+    text-align: center;
+    padding: 160px 27px;
+}
+
+.lgBgSection {
+    padding: 200px 0 150px 0;
+}
+
+h1.h1 {
+    color: #121212;
+    font-size: 120px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.green {
+    color: #066404;
+}
+
+.herotext {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

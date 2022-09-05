@@ -169,6 +169,15 @@ const Header = styled(Heading)`
           width: 100%;
         }
       }
+
+      li a.active {
+        color: ${({theme}) => theme.colors.primary.green};
+      }
+
+      li a.active::after {
+        content: "";
+        width: 100%;
+      }
     }
 
     .cartContainer {
