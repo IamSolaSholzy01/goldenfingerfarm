@@ -30,7 +30,7 @@ const About: ({title, className}: { title: string, className: string }) => JSX.E
                 <div className={styles.row}>
                     <div className={styles.col}>
                         <h2 className={styles.h2}>Welcome to <h1 className={styles.h1}>Golden Finger <span className={styles.green}>Farm</span> & <span className={styles.yellow}>Ranches</span> Ltd.</h1></h2>
-                        <PrimaryButton text="Explore Market" onClick={() => {}} style={{width: ""}} />
+                        <PrimaryButton text="Explore Market" onClick={() => {}} />
                     </div>
                     <Image src={fruits} alt="Fruits" width={400} height={409} />
                 </div>
