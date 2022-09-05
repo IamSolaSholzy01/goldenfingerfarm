@@ -7,6 +7,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import logoPic from "../public/images/logo.png"
 // import {CartIcon} from "../components/icons/CartIcon";
 import React, {ReactNode} from "react";
+import { useRouter } from "next/router";
 
 const links = [
     {label: "Home", href: "/"},
@@ -102,6 +103,7 @@ const Heading: ({isMobile, className}: { isMobile: boolean, className?: string }
                                                                                                         className
                                                                                                     }) => {
     const [burgerOpen, setBurgerOpen] = React.useState(false);
+    const router = useRouter();
     return (
         <div className={className}>
             {isMobile ? <header className={'mobileHeader'}>
@@ -110,7 +112,7 @@ const Heading: ({isMobile, className}: { isMobile: boolean, className?: string }
             </header> : <header className={'desktopHeader'}>
                 <div className="logoWrapper"><Image src={logoPic} alt={'logo'}/></div>
                 <ul>{
-                    links.map(({label, href}) => <li key={label}>
+                    links.map(({label, href}) => <li key={label} className={router.pathname == href ? "active" : ""}>
                         <Link href={href}>{label}</Link>
                     </li>)
                 }</ul>
@@ -149,10 +151,6 @@ const Header = styled(Heading)`
         transition: all 0.3s ease-in-out;
         position: relative;
 
-        &:hover, &:active {
-          color: ${({theme}) => theme.colors.primary.green};
-        }
-
         a::after {
           width: 0;
           content: '';
@@ -168,6 +166,10 @@ const Header = styled(Heading)`
           content: "";
           width: 100%;
         }
+      }
+
+      li.active {
+        color: ${({theme}) => theme.colors.primary.green};
       }
     }
 
