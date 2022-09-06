@@ -17,15 +17,19 @@
     padding: 200px 0 150px 0;
 }
 
-h1.h1 {
+.h1, .h1 > * {
     color: #121212;
-    font-size: 120px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 40px;
 }
 
 .green {
     color: #066404;
+}
+
+.yellow {
+    color: #FF9900;
 }
 
 .herotext {
@@ -35,4 +39,36 @@ h1.h1 {
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+.explore {
+    padding: 66px 0 109px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 180px;
+}
+
+.h2, .h2 > * {
+    color: #000000;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.col button {
+    width: 285px;
 }
