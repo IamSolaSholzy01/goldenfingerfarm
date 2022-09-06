@@ -1,9 +1,9 @@
 import { AppThemeType } from "./AppTheme";
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export interface ThemeWrapper {
-    theme: AppThemeType;
-    hasNoFocus: boolean;
+  theme: AppThemeType;
+  hasNoFocus: boolean;
 }
 
 /**
@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     box-sizing: border-box;
   }
 
-  html, body {
+  html, body, * {
     margin: 0;
     box-sizing: border-box;
     font-family: Space, sans-serif;
@@ -77,5 +77,6 @@ export const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     cursor: pointer;
   }
 
-  ${(props: { hasNoFocus: any; }) => props.hasNoFocus && ":focus { outline: none; }"}
+  ${(props: { hasNoFocus: any }) =>
+    props.hasNoFocus && ":focus { outline: none; }"}
 `;

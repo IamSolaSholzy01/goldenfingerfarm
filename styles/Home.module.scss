@@ -1,0 +1,162 @@
+$primaryGreen: #066404;
+$primaryYellow: #FF9900;
+
+/* ----------------------------{ Background Section }------------------------------- */
+.bgSection {
+  background-image: url('../public/images/homebg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bgSection p {
+  margin-bottom: 20px;
+}
+
+.smBgSection {
+  text-align: center;
+  padding: 160px 27px;
+}
+
+.lgBgSection {
+  padding: 150px 115px;
+}
+
+.lgBgSection p {
+  max-width: 520px;
+}
+
+.smBgSection h1 {
+  font-size: 3rem;
+}
+
+.lgBgSection h1 {
+  font-size: 4rem;
+}
+
+/* ----------------------------{ /Background Section }------------------------------- */
+
+/* ----------------------------{ Specialties Section }------------------------------- */
+.specialtiesSection {
+  text-align: center;
+  padding-top: 6rem !important;
+  > div {
+    display: grid;
+    grid-auto-flow: row;
+  }
+
+  > p {
+    margin-top: 30px;
+    a {
+      text-decoration: underline;
+      position: relative;
+    }
+    a::before {
+      content: '';
+      text-decoration: none;
+      border: solid $primaryGreen;
+      border-width: 0 3px 3px 0;
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      display: inline-block;
+      padding: 3px;
+      transition: all 0.3s ease-in-out;
+      transform: rotate(-45deg) translateX(5px) translateY(1px);
+    }
+
+    a:hover::before {
+      transform: rotate(-45deg) translateX(15px) translateY(11px);
+    }
+
+    a::after {
+      background: $primaryGreen;
+      content: "";
+      display: block;
+      height: 4px;
+      right: -22px;
+      position: absolute;
+      top: 50%;
+      width: 11px;
+      /* We need to animate the shaft too, to be able to look at a moving arrow */
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  a:hover::after {
+    transform: translateX(15px);
+  }
+
+  .imageContainer {
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    height: auto;
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 3px solid $primaryGreen;
+  }
+}
+
+.smSpecialtiesSection {
+  padding: 0 30px;
+  h2 {
+    font-size: 3rem;
+  }
+  > div {
+    > div {
+      margin: 1.5rem 0;
+      h3 {
+        font-size: 1.875rem;
+        margin: 20px 0;
+      }
+      p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+    }
+  }
+  .imageContainer {
+    margin: auto;
+    max-width: 80%;
+  }
+}
+
+.lgSpecialtiesSection {
+  padding: 0 100px;
+  h2 {
+    font-size: 4rem;
+  }
+  > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > div {
+      margin: 1.5rem 0;
+      h3 {
+        font-size: 2.5rem;
+        margin: 20px 0;
+      }
+      p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+    }
+    > div:nth-child(odd) {
+      text-align: left;
+      .imageContainer {
+        margin-right: auto;
+      }
+    }
+    > div:nth-child(even) {
+      .imageContainer {
+        margin-left: auto;
+      }
+      text-align: right;
+    }
+  }
+
+  .imageContainer {
+    max-width: 30%;
+  }
+}
+
