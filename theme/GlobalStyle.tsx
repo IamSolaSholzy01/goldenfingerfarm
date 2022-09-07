@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     font-weight: 125 950;
     font-stretch: 75% 125%;
     font-style: normal;
+    font-display: swap;
   }
 
   * {
@@ -26,7 +27,11 @@ export const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     box-sizing: border-box;
   }
 
-  html, body, * {
+  * {
+    font-family: Space, sans-serif;
+  }
+  
+  html, body {
     margin: 0;
     box-sizing: border-box;
     font-family: Space, sans-serif;
