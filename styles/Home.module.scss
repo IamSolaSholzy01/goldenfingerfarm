@@ -206,3 +206,23 @@ $primaryYellow: #FF9900;
     padding: 1.5rem 4rem;
   }
 }
+
+/* ----------------------------{ /Shop Section }------------------------------- */
+
+/* ----------------------------{ Products Section }------------------------------- */
+
+.productsSection {
+  text-align: center;
+
+  .imageContainer {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+  }
+}
+
+.smProductsSection {}
+
+.lgProductsSection {}
+
+/* ----------------------------{ /Products Section }------------------------------- */

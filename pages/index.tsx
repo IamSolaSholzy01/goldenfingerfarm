@@ -9,6 +9,7 @@ import { PrimaryButton } from "../components/buttons";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import Grid from "../components/containers/grid/Grid";
 
 const specialties = [
   {
@@ -39,6 +40,14 @@ const specialties = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
     slug: "",
   },
+];
+const productCategories = [
+  { title: "Green Pepper", image: "" },
+  { title: "Pepper", image: "" },
+  { title: "Poultry & Livestock", image: "birds.webp" },
+  { title: "Fish & Aquatics", image: "farmer.webp" },
+  { title: "Tomato", image: "" },
+  { title: "Cucumbers", image: "" },
 ];
 
 const classJoin = (...classes: string[]) => {
@@ -126,6 +135,38 @@ const Home: ({
           <PrimaryButton text={"View Shop"} />
         </div>
       </section>
+      <section
+        className={classJoin(
+          styles.productsSection,
+          isMobile ? styles.smProductsSection : styles.lgProductsSection
+        )}
+      >
+        <h3>
+          Our <span className={styles.green}>Products</span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
+          vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Ipsum
+        </p>
+        <Grid columns={3}>
+          {productCategories.map(({ title, image }, index) => (
+            <div key={index}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={"/images/home/" + image}
+                  alt={title}
+                  layout={"fill"}
+                />
+              </div>
+              <h5>{title}</h5>
+            </div>
+          ))}
+        </Grid>
+      </section>
+      <section></section>
+      <section></section>
+      <section></section>
     </div>
   );
 };
