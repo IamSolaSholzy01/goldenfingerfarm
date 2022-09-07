@@ -12,28 +12,28 @@ import Link from "next/link";
 
 const specialties = [
   {
-    image: "vegetables.jpeg",
+    image: "vegetables.webp",
     title: "Vegetables and Grains",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
     slug: "",
   },
   {
-    image: "farmer.jpeg",
+    image: "farmer.webp",
     title: "Livestock and fisheries",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
     slug: "",
   },
   {
-    image: "birds.jpeg",
+    image: "birds.webp",
     title: "Poultry farming",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
     slug: "",
   },
   {
-    image: "solar.png",
+    image: "solar.webp",
     title: "Green house",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
@@ -111,6 +111,20 @@ const Home: ({
             High end agriculture for all (View all our activities)
           </Link>
         </p>
+      </section>
+      <section
+        className={classJoin(
+          styles.shopSection,
+          isMobile ? styles.smShopSection : styles.lgShopSection
+        )}
+      >
+        <div>
+          <h3>
+            We provide <span className={styles.yellow}>fresh</span>{" "}
+            <span className={styles.green}>food</span> for your family
+          </h3>
+          <PrimaryButton text={"View Shop"} />
+        </div>
       </section>
     </div>
   );

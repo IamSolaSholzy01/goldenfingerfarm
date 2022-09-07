@@ -1,6 +1,13 @@
 $primaryGreen: #066404;
 $primaryYellow: #FF9900;
 
+.green {
+  color: $primaryGreen;
+}
+
+.yellow {
+  color: $primaryYellow;
+}
 /* ----------------------------{ Background Section }------------------------------- */
 .bgSection {
   background-image: url('../public/images/homebg.webp');
@@ -40,6 +47,7 @@ $primaryYellow: #FF9900;
 .specialtiesSection {
   text-align: center;
   padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
   > div {
     display: grid;
     grid-auto-flow: row;
@@ -139,6 +147,7 @@ $primaryYellow: #FF9900;
       p {
         font-size: 1.2rem;
         margin: 10px 0;
+        max-width: 80%;
       }
     }
     > div:nth-child(odd) {
@@ -146,9 +155,10 @@ $primaryYellow: #FF9900;
       .imageContainer {
         margin-right: auto;
       }
+
     }
     > div:nth-child(even) {
-      .imageContainer {
+      .imageContainer, p {
         margin-left: auto;
       }
       text-align: right;
@@ -160,3 +170,39 @@ $primaryYellow: #FF9900;
   }
 }
 
+/* ----------------------------{ /Specialties Section }------------------------------- */
+
+/* ----------------------------{ Shop Section }------------------------------- */
+.shopSection {
+  background-color: $primaryGreen;
+
+  div {
+    background-color: #fff;
+    border-radius: 1rem;
+
+    h3 {
+      font-size: 4rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.lgShopSection {
+  padding: 5rem 7.5rem;
+
+  div {
+    text-align: center;
+    padding: 4rem 15rem;
+  }
+}
+
+.smShopSection {
+  padding: 5rem 2rem;
+
+  div {
+    button {
+      width: 100%;
+    }
+    padding: 1.5rem 4rem;
+  }
+}
