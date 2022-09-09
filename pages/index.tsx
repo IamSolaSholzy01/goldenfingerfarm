@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import Grid from "../components/containers/grid/Grid";
+import SecondaryButton from "../components/buttons/SecondaryButton";
 
 const specialties = [
   {
@@ -42,12 +43,12 @@ const specialties = [
   },
 ];
 const productCategories = [
-  { title: "Green Pepper", image: "" },
-  { title: "Pepper", image: "" },
+  { title: "Green Pepper", image: "greenpepper.webp" },
+  { title: "Pepper", image: "pepper.webp" },
   { title: "Poultry & Livestock", image: "birds.webp" },
   { title: "Fish & Aquatics", image: "farmer.webp" },
-  { title: "Tomato", image: "" },
-  { title: "Cucumbers", image: "" },
+  { title: "Tomato", image: "tomato.webp" },
+  { title: "Cucumbers", image: "cucumber.webp" },
 ];
 
 const classJoin = (...classes: string[]) => {
@@ -149,7 +150,7 @@ const Home: ({
           vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Ipsum
         </p>
-        <Grid columns={3}>
+        <Grid columns={isMobile ? 1 : 3} columnGap={2.3} rowGap={8}>
           {productCategories.map(({ title, image }, index) => (
             <div key={index}>
               <div className={styles.imageContainer}>
@@ -163,6 +164,7 @@ const Home: ({
             </div>
           ))}
         </Grid>
+        <SecondaryButton text={"Shop our Products"} isLink={true} />
       </section>
       <section></section>
       <section></section>

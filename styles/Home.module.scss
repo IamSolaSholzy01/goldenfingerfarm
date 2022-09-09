@@ -89,11 +89,13 @@ $primaryYellow: #FF9900;
       /* We need to animate the shaft too, to be able to look at a moving arrow */
       transition: all 0.3s ease-in-out;
     }
+
+    a:hover::after {
+      transform: translateX(15px);
+    }
   }
 
-  a:hover::after {
-    transform: translateX(15px);
-  }
+
 
   .imageContainer {
     position: relative;
@@ -212,17 +214,51 @@ $primaryYellow: #FF9900;
 /* ----------------------------{ Products Section }------------------------------- */
 
 .productsSection {
-  text-align: center;
+  h3 {
+    font-size: 4.5rem;
+  }
 
+  text-align: center;
+  img {
+    object-fit: cover;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  img:hover {
+    transform: scale(0.8);
+  }
   .imageContainer {
     width: 100%;
     aspect-ratio: 1;
     position: relative;
   }
+  h5 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  button {
+    margin-top: 5rem;
+  }
 }
 
-.smProductsSection {}
+.smProductsSection {
+  margin: 4rem 2.5rem;
+  p {
+    margin: 2rem 0 8rem;
+    font-size: 1.5rem;
+  }
+}
 
-.lgProductsSection {}
+.lgProductsSection {
+  margin-top: 5rem;
+  > div {
+    margin: 0 7.625rem;
+  }
+  p {
+    margin: 2rem 15% 8rem;
+    font-size: 1.5rem;
+  }
+}
 
 /* ----------------------------{ /Products Section }------------------------------- */
