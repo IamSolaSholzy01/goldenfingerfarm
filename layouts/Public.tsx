@@ -297,7 +297,7 @@ const Footing: ({
         <form>
           <div>
             <label>Enter your email and we'll send you the latest plans</label>
-            <input type={"text"} placeholder={"Enter your email"} required />
+            <input type={"email"} placeholder={"Enter your email"} required />
           </div>
           <button type="submit">Submit</button>
         </form>

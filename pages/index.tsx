@@ -227,7 +227,7 @@ const Home: ({
             adipiscing elit. Ipsum{" "}
           </p>
         </div>
-        <Grid columns={isMobile ? 1 : 2} align={"center"}>
+        <Grid columns={isMobile ? 1 : 2} align={"center"} columnGap={7}>
           <div className={styles.imageContainer}>
             <Image
               src={"/images/home/" + "farmer.webp"}
