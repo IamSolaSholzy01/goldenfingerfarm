@@ -8,6 +8,19 @@ $primaryYellow: #FF9900;
 .yellow {
   color: $primaryYellow;
 }
+
+.imageContainer {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
 /* ----------------------------{ Background Section }------------------------------- */
 .bgSection {
   background-image: url('../public/images/homebg.webp');
@@ -299,6 +312,7 @@ $primaryYellow: #FF9900;
 /* ----------------------------{ Why Section }------------------------------- */
 .whySection {
   background-color: $primaryGreen;
+  margin: 5rem 0;
   padding: 5rem;
   text-align: center;
   * {
@@ -322,3 +336,11 @@ $primaryYellow: #FF9900;
   }
 }
 /* ----------------------------{ /Why Section }------------------------------- */
+
+/* ----------------------------{ Review Section }------------------------------- */
+.reviewSection{}
+
+.lgReviewSection {}
+
+.smReviewSection {}
+/* ----------------------------{ /Review Section }------------------------------- */

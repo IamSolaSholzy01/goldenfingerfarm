@@ -11,6 +11,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Grid from "../components/containers/grid/Grid";
 import SecondaryButton from "../components/buttons/SecondaryButton";
+import { QuoteIcon } from "../components/icons/QuoteIcon";
+import Flex from "../components/containers/flex/Flex";
 
 const specialties = [
   {
@@ -216,7 +218,40 @@ const Home: ({
           </div>
         </Grid>
       </section>
-      <section></section>
+      <section className={styles.reviewSection}>
+        <div>
+          <h3>Client Review</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
+            vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Ipsum{" "}
+          </p>
+        </div>
+        <Grid columns={isMobile ? 1 : 2} align={"center"}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/images/home/" + "farmer.webp"}
+              alt={"health"}
+              layout={"fill"}
+            />
+          </div>
+          <div>
+            <QuoteIcon />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum
+              cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ipsum.Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum
+              dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <Flex align={"center"} direction="row">
+              <div>Personal Image Container</div>
+              <h3>Daniel Jack</h3>
+            </Flex>
+            <div>flex</div>
+          </div>
+        </Grid>
+      </section>
       <section></section>
     </div>
   );
