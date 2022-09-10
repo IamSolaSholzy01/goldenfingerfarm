@@ -165,8 +165,57 @@ const Home: ({
           ))}
         </Grid>
         <SecondaryButton text={"Shop our Products"} isLink={true} />
+        <div>
+          <h3>
+            Eat <span className={styles.green}>healthy</span> live{" "}
+            <span className={styles.yellow}>healthy</span>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
+            vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Ipsum{" "}
+          </p>
+        </div>
+        <Grid align={"center"} columns={isMobile ? 1 : 2} columnGap={5}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={"/images/home/" + "happyfarmer.webp"}
+              alt={"health"}
+              layout={"fill"}
+            />
+          </div>
+          <div>
+            <h3>Fresh and organic food made our health history</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum
+              cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Ipsum{" "}
+            </p>
+            <PrimaryButton text={"Learn more"} />
+          </div>
+        </Grid>
       </section>
-      <section></section>
+      <section className={styles.whySection}>
+        <h4>Why you should choose us</h4>
+        <Grid columns={isMobile ? 1 : 4} align={"center"}>
+          <div>
+            <span>25+</span>
+            <span>Years of experience</span>
+          </div>
+          <div>
+            <span>98+</span>
+            <span>Expert member</span>
+          </div>
+          <div>
+            <span>49+</span>
+            <span>Win awards</span>
+          </div>
+          <div>
+            <span>85+</span>
+            <span>Worldwide branches</span>
+          </div>
+        </Grid>
+      </section>
       <section></section>
       <section></section>
     </div>

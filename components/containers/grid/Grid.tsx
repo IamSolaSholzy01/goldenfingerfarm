@@ -8,6 +8,7 @@ const Grid: ({
   columns,
   rowGap,
   columnGap,
+  align,
 }: {
   children: ReactNode;
   className?: string;
@@ -15,6 +16,7 @@ const Grid: ({
   columns?: number;
   columnGap?: number;
   rowGap?: number;
+  align?: "center" | "right" | "left" | "flex-start" | "flex-end";
 }) => JSX.Element = ({ className, children }) => (
   <div className={className}>{children}</div>
 );
@@ -27,5 +29,6 @@ const StyledGrid = styled(Grid)`
     columns ? `repeat(${columns}, minmax(0, 1fr))` : ""};
   row-gap: ${({ rowGap }) => (rowGap ? `${rowGap}rem` : "")};
   column-gap: ${({ columnGap }) => (columnGap ? `${columnGap}rem` : "")};
+  align-items: ${({ align }) => (align ? `${align}` : "flex-start")};
 `;
 export default StyledGrid;
