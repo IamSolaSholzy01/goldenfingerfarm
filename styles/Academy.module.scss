@@ -1,5 +1,7 @@
 $primaryGreen: #066404;
 $primaryYellow: #FF9900;
+$bgGreen: #F3FFED;
+
 
 .green {
   color: $primaryGreen;
@@ -9,6 +11,9 @@ $primaryYellow: #FF9900;
   color: $primaryYellow;
 }
 
+.bgGreen {
+  background-color: $bgGreen;
+}
 /* ----------------------------{ Loud Section }------------------------------- */
 .loudSection {}
 
