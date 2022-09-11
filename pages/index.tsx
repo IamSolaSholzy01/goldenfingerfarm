@@ -53,7 +53,7 @@ const productCategories = [
   { title: "Cucumbers", image: "cucumber.webp" },
 ];
 
-const classJoin = (...classes: string[]) => {
+export const classJoin = (...classes: string[]) => {
   return classes.join(" ");
 };
 
