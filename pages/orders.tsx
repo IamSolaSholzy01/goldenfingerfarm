@@ -41,6 +41,48 @@ const Orders: ({
           </div>
         </Flex>
       </section>
+      <section>
+        <h5 className={styles.yellow}>See other related kinds of products</h5>
+        <div>
+          <Flex direction={isMobile ? "column" : "row"}>
+            <div>Image</div>
+            <Flex direction={isMobile ? "column-reverse" : "row"}>
+              <div>
+                <h5>Product Name</h5>
+                <div>Rating</div>
+                <div>&#8358;25000</div>
+                <PrimaryButton text={"Add to cart"} />
+              </div>
+              <div>
+                <h6>Description</h6>
+                <p>Description</p>
+              </div>
+            </Flex>
+          </Flex>
+        </div>
+      </section>
+      <section>
+        <h3>
+          Shop other <span className={styles.green}>Products</span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
+          vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Ipsum
+        </p>
+        <div>Component to display products</div>
+      </section>
+      <section>
+        <h2>
+          Eat <span className={styles.green}>healthy,</span> live{" "}
+          <span className={styles.yellow}>healthy</span>
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
+          vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Ipsum{" "}
+        </p>
+      </section>
     </div>
   );
 };
