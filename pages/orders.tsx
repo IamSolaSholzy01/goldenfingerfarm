@@ -3,6 +3,9 @@ import styles from "../styles/Orders.module.scss";
 import Flex from "../components/containers/flex/Flex";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { PrimaryButton } from "../components/buttons";
+import Image from "next/image";
+import { classJoin } from "./index";
+import React from "react";
 
 const Orders: ({
   title,
@@ -12,22 +15,43 @@ const Orders: ({
   className: string;
 }) => JSX.Element = ({ className }) => {
   const isMobile = useMediaQuery("(max-width: 895px)");
-
+  const [featuredProduct, setFeaturedProduct] = React.useState({
+    image: "pepper.webp",
+    title: "Pepper",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. IpsumLorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum  ",
+  });
   return (
     <div className={className}>
-      <section className={styles.mainProduct}>
+      <section
+        className={classJoin(
+          styles.mainProduct,
+          styles.bgGreen,
+          isMobile ? styles.smMainProduct : styles.lgMainProduct
+        )}
+      >
         <h2 className={styles.yellow}>Order Information</h2>
-        <Flex direction={isMobile ? "column" : "row"}>
-          <div>
-            Product Image
-            <h5>Product Name</h5>
+        <Flex direction={isMobile ? "column" : "row"} gap={3}>
+          <div className={styles.productContainer}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={"/images/home/" + featuredProduct.image}
+                alt={featuredProduct.title}
+                layout={"fill"}
+              />
+            </div>
+            <h5>{featuredProduct.title}</h5>
           </div>
           <div>
-            <h5>Description</h5>
-            <p>Description Content</p>
+            <h6>Description</h6>
+            <p>{featuredProduct.description}</p>
             <h4 className={styles.yellow}>Price: &#8358;10,000 /pack</h4>
-            <Flex direction={isMobile ? "column" : "row"}>
-              <Flex>
+            <Flex
+              direction={isMobile ? "column" : "row"}
+              align={"center"}
+              className={styles.order}
+            >
+              <Flex className={styles.quantity} align="center">
                 <span>Add quantity</span>
                 <div>
                   <select>

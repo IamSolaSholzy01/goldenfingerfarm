@@ -15,6 +15,82 @@ $bgGreen: #F3FFED;
   background-color: $bgGreen;
 }
 
+.imageContainer {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  height: auto;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+
 /* ----------------------------{ Main Product Section }------------------------------- */
-.mainProduct {}
+.mainProduct {
+  text-align: center;
+  .imageContainer {
+    width: 100%
+  }
+  h5 {
+    text-transform: capitalize;
+    font-size: 3rem;
+    color: $primaryGreen;
+  }
+  h6 {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: 400
+  }
+  .quantity {
+    span, select, option {
+      color: $primaryGreen;
+    }
+    span {
+      margin-right: 2rem;
+    }
+    width: 50%
+  }
+}
+.smMainProduct {
+  padding: 4rem 1.875rem;
+  .productContainer {
+    margin: auto;
+    display: block;
+    width: 90%;
+  }
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+  h4 {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+  div {
+    justify-content: center;
+  }
+}
+
+.lgMainProduct {
+  padding: 6rem 8rem;
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 5rem
+  }
+  .productContainer {
+    flex-shrink: 0;
+    width: 30%;
+  }
+  h4 {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+  .order {
+    width: 100%;
+    justify-content: center;
+  }
+}
 /* ----------------------------{ /Main Product Section }------------------------------- */
