@@ -14,10 +14,124 @@ $bgGreen: #F3FFED;
 .bgGreen {
   background-color: $bgGreen;
 }
+
+.imageContainer {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.section {
+}
+
+.smSection {
+  section {
+    padding: 2rem 1.875rem;
+  }
+}
+
+.lgSection {
+  section {
+    padding: 4rem 8rem;
+  }
+}
+
 /* ----------------------------{ Loud Section }------------------------------- */
-.loudSection {}
+.loudSection {
+  text-align: center;
+}
 
-.lgLoudSection {}
+.lgLoudSection {
+  padding: 6rem 12rem;
+  h2 {
+    font-size: 5rem;
+  }
+}
 
-.smLoudSection {}
+.smLoudSection {
+  padding: 4rem 1.875rem;
+  h2 {
+    font-size: 3rem;
+  }
+}
 /* ----------------------------{ /Loud Section }------------------------------- */
+
+/* ----------------------------{ Gallery Section }------------------------------- */
+.gallerySection {
+  p {
+    margin: 1.25rem 0
+  }
+}
+
+.smGallerySection {
+  h3 {
+    font-size: 2.5rem;
+    font-weight: 500
+  }
+}
+
+.lgGallerySection {
+  h3 {
+    font-size: 4rem;
+    font-weight: 500
+  }
+  > div {
+    > div {
+      width: 50%;
+    }
+  }
+}
+
+/* ----------------------------{ /Gallery Section }------------------------------- */
+
+/* ----------------------------{ Expect Section }------------------------------- */
+.expectSection {
+  h3 {
+    margin: 2rem 0;
+  }
+  text-align: center;
+  .imageContainer {
+    border-radius: 999999px;
+  }
+  button {
+    margin: 1rem;
+  }
+  .lessons {
+    margin: 2rem 0
+  }
+}
+
+.smExpectSection {
+  h3 {
+    font-size: 3rem
+  }
+  h5 {
+    font-size: 1.5rem
+  }
+  .imageContainer {
+    width: 70%;
+  }
+}
+
+.lgExpectSection {
+  h3 {
+    font-size: 6rem;
+  }
+  .imageContainer {
+    width: 40%;
+  }
+  .product {
+    h5 {
+      font-size: 2.5rem
+    }
+    text-align: left
+  }
+}
+/* ----------------------------{ /Expect Section }------------------------------- */

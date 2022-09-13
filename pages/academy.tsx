@@ -5,8 +5,35 @@ import { classJoin } from "./index";
 import Flex from "../components/containers/flex/Flex";
 import { PrimaryButton } from "../components/buttons";
 import Grid from "../components/containers/grid/Grid";
+import Image from "next/image";
+import SecondaryButton from "../components/buttons/SecondaryButton";
 
-const lessons = [];
+const lessons = [
+  {
+    title: "How to grow vegetables and grains",
+    image: "pepper.webp",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
+  },
+  {
+    title: "Extensive lessons on poultry farming",
+    image: "birds.webp",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
+  },
+  {
+    title: "Extensive livestock and fishery farming",
+    image: "farmer.webp",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
+  },
+  {
+    title: "Sales and marketing of farm produce",
+    image: "pepper.webp",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum ",
+  },
+];
 const About: ({
   title,
   className,
@@ -17,7 +44,13 @@ const About: ({
   const isMobile = useMediaQuery("(max-width: 895px)");
 
   return (
-    <div className={className}>
+    <div
+      className={classJoin(
+        className,
+        styles.section,
+        isMobile ? styles.smSection : styles.lgSection
+      )}
+    >
       <section
         className={classJoin(
           styles.loudSection,
@@ -29,8 +62,18 @@ const About: ({
           <span className={styles.yellow}>Academy.</span>
         </h2>
       </section>
-      <section>
-        <Flex direction={isMobile ? "column-reverse" : "row"}>
+      <section
+        className={classJoin(
+          styles.bgGreen,
+          styles.gallerySection,
+          isMobile ? styles.smGallerySection : styles.lgGallerySection
+        )}
+      >
+        <Flex
+          direction={isMobile ? "column-reverse" : "row"}
+          gap={5}
+          align="center"
+        >
           <div>
             <h3>Creating wealth through farming</h3>
             <p>
@@ -45,23 +88,37 @@ const About: ({
           </Grid>
         </Flex>
       </section>
-      <section>
-        <h3>What to expect</h3>
+      <section
+        className={classJoin(
+          styles.expectSection,
+          isMobile ? styles.smExpectSection : styles.lgExpectSection
+        )}
+      >
+        <h3 className={styles.green}>What to expect</h3>
         {lessons.map(({ title, image, description }, index) => (
           <Flex
             key={index}
             direction={isMobile ? "column" : "row"}
             align={"center"}
+            gap={3}
+            className={styles.lessons}
           >
-            <div>Image Container</div>
-            <div>
+            <div className={styles.imageContainer}>
+              <Image
+                src={"/images/home/" + image}
+                alt={title.substring(0, 10)}
+                layout={"fill"}
+              />
+            </div>
+            <div className={styles.product}>
               <h5>{title}</h5>
               <p>{description}</p>
             </div>
           </Flex>
         ))}
+        <SecondaryButton text={"Start Application"} isLink={true} />
       </section>
-      <section>
+      <section className={classJoin(styles.bgGreen)}>
         <h3>Product Gallery</h3>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras vel
         donec maecenas eu.Lorem ipsum dolor sit amet, consectetur adipiscing
