@@ -23,7 +23,6 @@ const StyledGrid = styled(Flex)`
   display: flex;
   flex-direction: ${({ direction }) => (direction ? direction : "row")};
   gap: ${({ gap }) => (gap ? `${gap}rem` : "")};
-  column-gap: ${({ columnGap }) => (columnGap ? `${columnGap}rem` : "")};
   align-items: ${({ align }) => (align ? `${align}` : "flex-start")};
   justify-content: ${({ justify }) => (justify ? `${justify}` : "flex-start")};
 `;
