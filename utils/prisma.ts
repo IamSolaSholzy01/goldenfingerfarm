@@ -1,3 +1,4 @@
+/// <reference path="globals.global.d.ts" />
 // /lib/prisma.ts
 import { PrismaClient } from "../src/generated/client";
 
