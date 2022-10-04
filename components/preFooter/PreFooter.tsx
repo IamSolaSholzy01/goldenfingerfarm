@@ -21,7 +21,7 @@ export const Healthy = () => {
     </section>
   );
 };
-const PreFooter: ({ className }: { className: string }) => JSX.Element = ({
+const PreFooter: ({ className }: { className?: string }) => JSX.Element = ({
   className,
 }) => {
   const isMobile = useMediaQuery("(max-width: 895px)");
