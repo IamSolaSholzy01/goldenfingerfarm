@@ -33,7 +33,7 @@ const Contact: ({
         <p>Want to make enquiries on any issue? , send us a message.</p>
       </section>
       <section className={styles.bgGreen}>
-        <Grid columns={isMobile ? 1 : 2} columnGap={6}>
+        <Grid columns={2} columnGap={6}>
           <div className={styles.formGroup}>
             <label>First Name</label>
             <input />
