@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { classJoin } from "../../pages";
 import Flex from "../containers/flex/Flex";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SecondaryButton from "../buttons/SecondaryButton";
@@ -27,7 +26,7 @@ const PreFooter: ({ className }: { className?: string }) => JSX.Element = ({
   const isMobile = useMediaQuery("(max-width: 895px)");
 
   return (
-    <div className={classJoin(className)}>
+    <div className={className}>
       <Flex
         direction={isMobile ? "column-reverse" : "row"}
         align={"center"}
