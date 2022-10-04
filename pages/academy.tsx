@@ -7,6 +7,7 @@ import { PrimaryButton } from "../components/buttons";
 import Grid from "../components/containers/grid/Grid";
 import Image from "next/image";
 import SecondaryButton from "../components/buttons/SecondaryButton";
+import { Healthy } from "../components/preFooter/PreFooter";
 
 const lessons = [
   {
@@ -132,17 +133,7 @@ const About: ({
           <div>Videos component</div>
         </div>
       </section>
-      <section>
-        <h2>
-          Eat <span className={styles.green}>healthy,</span> live{" "}
-          <span className={styles.yellow}>healthy</span>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
-          vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Ipsum{" "}
-        </p>
-      </section>
+      <Healthy />
     </div>
   );
 };

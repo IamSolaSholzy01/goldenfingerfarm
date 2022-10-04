@@ -1,0 +1,37 @@
+$primaryGreen: #066404;
+$primaryYellow: #FF9900;
+
+
+.imageContainer {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  height: auto;
+  //border-radius: 20px;
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.green {
+  color: $primaryGreen;
+}
+
+.yellow {
+  color: $primaryYellow;
+}
+
+.healthyHeading {
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.healthySpan {
+  font-size: 1.25rem;
+}

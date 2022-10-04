@@ -6,6 +6,7 @@ import { PrimaryButton } from "../components/buttons";
 import Image from "next/image";
 import { classJoin } from "./index";
 import React from "react";
+import { Healthy } from "../components/preFooter/PreFooter";
 
 const Orders: ({
   title,
@@ -96,17 +97,7 @@ const Orders: ({
         </p>
         <div>Component to display products</div>
       </section>
-      <section>
-        <h2>
-          Eat <span className={styles.green}>healthy,</span> live{" "}
-          <span className={styles.yellow}>healthy</span>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum cras
-          vel donec maecenas eu.Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Ipsum{" "}
-        </p>
-      </section>
+      <Healthy />
     </div>
   );
 };
